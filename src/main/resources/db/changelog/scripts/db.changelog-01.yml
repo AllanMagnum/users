@@ -1,0 +1,71 @@
+databaseChangeLog:
+    -   changeSet:
+            id: 1
+            author: allan.magnum
+            changes:
+                -   createTable:
+                        schemaName: USR
+                        tableName: EMPLOYEE
+                        columns:
+                            -   column:
+                                    name: UUID
+                                    type: VARCHAR(36)
+                                    constraints:
+                                        primaryKey: true
+                                        nullable: false
+                            -   column:
+                                    name: CREATION_DATE
+                                    type: TIMESTAMP
+                                    constraints:
+                                        nullable: false
+                            -   column:
+                                    name: TYPE
+                                    type: VARCHAR(10)
+                                    constraints:
+                                        nullable: false
+                            -   column:
+                                    name: NAME
+                                    type: varchar(50)
+                                    constraints:
+                                        nullable: false
+                            -   column:
+                                    name: EMAIL
+                                    type: varchar(50)
+                                    constraints:
+                                        nullable: false
+                            -   column:
+                                    name: ID_COMPANY
+                                    type: INTEGER
+                            -   column:
+                                    name: UUID_MANAGER
+                                    type: varchar(36)
+
+                -   createTable:
+                        tableName: COMPANY
+                        columns:
+                            -   column:
+                                    name: ID
+                                    type: int
+                                    autoIncrement: true
+                                    constraints:
+                                        primaryKey: true
+                                        nullable: false
+                            -   column:
+                                    name: NAME
+                                    type: varchar(50)
+                                    constraints:
+                                        nullable: false
+
+                -   addForeignKeyConstraint:
+                        baseTableName: EMPLOYEE
+                        baseColumnNames: ID_COMPANY
+                        constraintName: FK_EMPLOYEE_COMPANY
+                        referencedTableName: COMPANY
+                        referencedColumnNames: ID
+
+                -   addForeignKeyConstraint:
+                        baseTableName: EMPLOYEE
+                        baseColumnNames: UUID_MANAGER
+                        constraintName: FK_EMPLOYEE_MANAGER
+                        referencedTableName: EMPLOYEE
+                        referencedColumnNames: UUID

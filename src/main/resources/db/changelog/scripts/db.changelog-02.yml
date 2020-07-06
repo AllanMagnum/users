@@ -1,0 +1,56 @@
+databaseChangeLog:
+    -   changeSet:
+            id: 2
+            author: allan.mendonca
+            changes:
+                -   insert:
+                        tableName: COMPANY
+                        columns:
+                            -   column:
+                                    name: NAME
+                                    value: "PICPAY"
+                -   insert:
+                        tableName: EMPLOYEE
+                        columns:
+                            -   column:
+                                    name: UUID
+                                    value: "b0f69beb-1ab8-4c48-8840-6f83cf599117"
+                            -   column:
+                                    name: CREATION_DATE
+                                    value: "2020-04-05 10:00:00"
+                            -   column:
+                                    name: TYPE
+                                    value: "MANAGER"
+                            -   column:
+                                    name: NAME
+                                    value: "José Carlos Mazella Junior"
+                            -   column:
+                                    name: EMAIL
+                                    value: "jose.mazella@picpay.com"
+                            -   column:
+                                    name: ID_COMPANY
+                                    value: 1
+                -   insert:
+                        tableName: EMPLOYEE
+                        columns:
+                            -   column:
+                                    name: UUID
+                                    value: "10ce3739-65a5-4dd9-8123-60f884026df2"
+                            -   column:
+                                    name: CREATION_DATE
+                                    value: "2020-04-05 10:01:00"
+                            -   column:
+                                    name: TYPE
+                                    value: "EMPLOYEE"
+                            -   column:
+                                    name: NAME
+                                    value: "Allan Magnum Mello de Mendonça"
+                            -   column:
+                                    name: EMAIL
+                                    value: "allan.magnum@picpay.com"
+                            -   column:
+                                    name: ID_COMPANY
+                                    value: 1
+                            -   column:
+                                    name: UUID_MANAGER
+                                    value: "b0f69beb-1ab8-4c48-8840-6f83cf599117"

@@ -1,0 +1,5 @@
+spring:
+  liquibase:
+    enabled: false
+  security:
+    enabled: false
